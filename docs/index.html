@@ -72,16 +72,21 @@
         var data = [];
         for (var i = 0; i < json.length; i++) {
           var j = json[i];
-          data.push({
-            name: j[0],
-            lat: j[1],
-            lng: j[2],
-            img: j[3],
-            area: j[4],
-            url: j[5],
-            icon: j[6],
-            category: j[7]
-          });
+          if (j[1] != null && j[2] != null) {
+            data.push(
+              {
+                name: j[0],
+                lat: j[1],
+                lng: j[2],
+                img: j[3],
+                area: j[4],
+                url: j[5],
+                icon: j[6],
+                category: j[7]
+              }
+            );
+          }
+          
         }
         return data;
       }
